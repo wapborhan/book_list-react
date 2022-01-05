@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  
 }
-
+.booklist{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
