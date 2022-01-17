@@ -1,7 +1,13 @@
-.book-item{
-  padding: 10px ;
+.book-item {
+  padding: 10px;
   margin: 10px auto;
   border-radius: 10px;
-  border:1px solid;
-  width: 300px;
+  border: 1px solid;
+  width: 280px;
+}
+
+.booklist {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
 }

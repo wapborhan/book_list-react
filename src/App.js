@@ -74,7 +74,7 @@ class App extends Component {
       borderRadius: "10px",
       backgroundColor: "green",
       color: "red",
-      width: "1100px",
+      width: "90%",
       margin: "20px auto",
     };
     return (
