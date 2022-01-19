@@ -46,7 +46,6 @@ class App extends Component {
       { bookName: "Poth", writter: "Rabby Biswas" },
       { bookName: "Somoi", writter: "Farhabi Islam" },
     ],
-    otherProp: "I am other Prop",
   };
   changebookState = (newBook) => {
     this.setState({
@@ -84,7 +83,7 @@ class App extends Component {
       return <Book bookName={book.bookName} writter={book.writter} />;
     });
 
-    console.log(books);
+    // console.log(books);
 
     return (
       <div className="App">
