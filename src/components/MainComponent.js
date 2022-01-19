@@ -1,14 +1,11 @@
 import react, { Component } from "react";
-import Book from "./Book";
+import book from "../assets/book";
+import BookList from "./list/BookList";
 
 class MainComponent extends Component {
   // state
   state = {
-    books: [
-      { id: 1, bookName: "Alo", writter: "Borhan Uddin" },
-      { id: 2, bookName: "Poth", writter: "Rabby Biswas" },
-      { id: 3, bookName: "Somoi", writter: "MahMud Hasan" },
-    ],
+    books: book,
     showBooks: true,
   };
   // changebookState = (newBook) => {
@@ -57,21 +54,7 @@ class MainComponent extends Component {
     // const bookState = this.state.books;
     let books = null;
     if (this.state.showBooks) {
-      books = this.state.books.map((book, index) => {
-        return (
-          <Book
-            key={book.id}
-            bookName={book.bookName}
-            writter={book.writter}
-            changeInpt={(event) => {
-              this.changeInput(event, index);
-            }}
-            delete={() => {
-              this.deleteBookstate(index);
-            }}
-          />
-        );
-      });
+      books = <BookList books={this.state.books} />;
     }
 
     // console.log(books);

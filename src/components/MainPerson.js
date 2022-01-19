@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Person from "./components/Person";
+import Person from "./Person";
 // Funtion Component
 // function MainPerson() {
 //   //JSX Format

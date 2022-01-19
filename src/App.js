@@ -1,8 +1,14 @@
 import "./App.css";
 import MainComponent from "./components/MainComponent";
+// import MainPerson from "./components/MainPerson";
 
 const App = () => {
-  return <MainComponent />;
+  return (
+    <div>
+      <MainComponent />
+      {/* <MainPerson /> */}
+    </div>
+  );
 };
 
 export default App;
