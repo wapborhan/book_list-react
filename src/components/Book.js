@@ -6,7 +6,7 @@ const Book = (props) => {
     <div className="book-item">
       <h3 onClick={props.delete}>Book: {props.bookName}</h3>
       <h4>Writter: {props.writter}</h4>
-      {/* <input type="text" onChange={props.changeInpt} value={props.bookName} /> */}
+      <input type="text" onChange={props.changeInpt} value={props.bookName} />
     </div>
   );
 };

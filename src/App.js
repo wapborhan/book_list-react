@@ -56,6 +56,17 @@ class App extends Component {
   //     ],
   //   });
   // };
+  changeInput = (event, index) => {
+    const book = {
+      ...this.state.books[index],
+    };
+    book.bookName = event.target.value;
+
+    const books = [...this.state.books];
+    books[index] = book;
+
+    this.setState({ books: books });
+  };
 
   deleteBookstate = (index) => {
     const books = this.state.books.slice();
@@ -64,16 +75,6 @@ class App extends Component {
     books.splice(index, 1);
     this.setState({ books: books });
   };
-
-  // changeInput = (event) => {
-  //   this.setState({
-  //     books: [
-  //       { bookName: event.target.value, writter: "Borhan Uddin" },
-  //       { bookName: "Poth", writter: "Rabby Biswas" },
-  //       { bookName: "Somoi", writter: "Farhabi Islam" },
-  //     ],
-  //   });
-  // };
 
   render() {
     const style = {
@@ -93,6 +94,9 @@ class App extends Component {
           key={book.id}
           bookName={book.bookName}
           writter={book.writter}
+          changeInpt={(event) => {
+            this.changeInput(event, index);
+          }}
           delete={() => {
             this.deleteBookstate(index);
           }}
