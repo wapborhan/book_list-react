@@ -42,30 +42,38 @@ class App extends Component {
   // state
   state = {
     books: [
-      { bookName: "Alo", writter: "Borhan Uddin" },
-      { bookName: "Poth", writter: "Rabby Biswas" },
-      { bookName: "Somoi", writter: "Farhabi Islam" },
+      { id: 1, bookName: "Alo", writter: "Borhan Uddin" },
+      { id: 2, bookName: "Poth", writter: "Rabby Biswas" },
+      { id: 3, bookName: "Somoi", writter: "MahMud Hasan" },
     ],
   };
-  changebookState = (newBook) => {
-    this.setState({
-      books: [
-        { bookName: newBook, writter: "Borhan Uddin" },
-        { bookName: "Amader somoi", writter: "Rabby Biswas" },
-        { bookName: "Polish", writter: "Farhabi Islam" },
-      ],
-    });
+  // changebookState = (newBook) => {
+  //   this.setState({
+  //     books: [
+  //       { bookName: newBook, writter: "Borhan Uddin" },
+  //       { bookName: "Amader somoi", writter: "Rabby Biswas" },
+  //       { bookName: "Polish", writter: "Farhabi Islam" },
+  //     ],
+  //   });
+  // };
+
+  deleteBookstate = (index) => {
+    const books = this.state.books.slice();
+    // const books = this.state.books.map((item) => item);
+    // const books = [...this.state.books];
+    books.splice(index, 1);
+    this.setState({ books: books });
   };
 
-  changeInput = (event) => {
-    this.setState({
-      books: [
-        { bookName: event.target.value, writter: "Borhan Uddin" },
-        { bookName: "Poth", writter: "Rabby Biswas" },
-        { bookName: "Somoi", writter: "Farhabi Islam" },
-      ],
-    });
-  };
+  // changeInput = (event) => {
+  //   this.setState({
+  //     books: [
+  //       { bookName: event.target.value, writter: "Borhan Uddin" },
+  //       { bookName: "Poth", writter: "Rabby Biswas" },
+  //       { bookName: "Somoi", writter: "Farhabi Islam" },
+  //     ],
+  //   });
+  // };
 
   render() {
     const style = {
@@ -79,8 +87,17 @@ class App extends Component {
 
     // const bookState = this.state.books;
 
-    const books = this.state.books.map((book) => {
-      return <Book bookName={book.bookName} writter={book.writter} />;
+    const books = this.state.books.map((book, index) => {
+      return (
+        <Book
+          key={book.id}
+          bookName={book.bookName}
+          writter={book.writter}
+          delete={() => {
+            this.deleteBookstate(index);
+          }}
+        />
+      );
     });
 
     // console.log(books);
@@ -88,13 +105,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1 style={style}>Book List</h1>
-        <button
+        {/* <button
           onClick={this.changebookState.bind(this, "Sukher Paira Koire??")}
         >
           Change Book
-        </button>
-        <br></br>
-        <input type="text" onChange={this.changeInput} />
+        </button> */}
+        <br />
+        {/* <input type="text" onChange={this.changeInput} /> */}
         <div className="booklist">
           {books}
 
