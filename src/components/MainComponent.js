@@ -42,15 +42,6 @@ class MainComponent extends Component {
   };
 
   render() {
-    const style = {
-      border: "1px solid #000",
-      borderRadius: "10px",
-      backgroundColor: "green",
-      color: "red",
-      width: "90%",
-      margin: "20px auto",
-    };
-
     // const bookState = this.state.books;
     let books = null;
     if (this.state.showBooks) {
@@ -63,11 +54,9 @@ class MainComponent extends Component {
       );
     }
 
-    // console.log(books);
-
     return (
       <div className="App">
-        <h1 style={style}>Book List</h1>
+        <h1 className="head">Book List</h1>
         <button onClick={this.toogleBooks}>Toogle Books</button>
         {/* <button
           onClick={this.changebookState.bind(this, "Sukher Paira Koire??")}
@@ -75,7 +64,6 @@ class MainComponent extends Component {
           Change Book
         </button> */}
         <br />
-        {/* <input type="text" onChange={this.changeInput} /> */}
         <div className="booklist">
           {books}
 

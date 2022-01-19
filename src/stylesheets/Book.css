@@ -11,3 +11,12 @@
   width: 100%;
   display: flex;
 }
+
+.head {
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: green;
+  color: red;
+  width: 90%;
+  margin: 20px auto;
+}
