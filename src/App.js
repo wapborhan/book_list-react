@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
-import Person from "./component/Person";
-import Book from "./component/Book";
+import Person from "./components/Person";
+import Book from "./components/Book";
 import { Component } from "react/cjs/react.production.min";
 //Funtion Component
 // function App() {
@@ -77,6 +77,15 @@ class App extends Component {
       width: "90%",
       margin: "20px auto",
     };
+
+    // const bookState = this.state.books;
+
+    const books = this.state.books.map((book) => {
+      return <Book bookName={book.bookName} writter={book.writter} />;
+    });
+
+    console.log(books);
+
     return (
       <div className="App">
         <h1 style={style}>Book List</h1>
@@ -88,7 +97,9 @@ class App extends Component {
         <br></br>
         <input type="text" onChange={this.changeInput} />
         <div className="booklist">
-          <Book
+          {books}
+
+          {/* <Book
             bookName={this.state.books[0].bookName}
             writter={this.state.books[0].writter}
             changeInpt={this.changeInput}
@@ -101,7 +112,7 @@ class App extends Component {
             bookName={this.state.books[2].bookName}
             writter={this.state.books[2].writter}
             change={this.changebookState}
-          />
+          /> */}
         </div>
       </div>
     );
