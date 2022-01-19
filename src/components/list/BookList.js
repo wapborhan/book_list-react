@@ -9,10 +9,10 @@ const BookList = (props) => {
         bookName={book.bookName}
         writter={book.writter}
         changeInpt={(event) => {
-          this.changeInput(event, index);
+          props.changeInput(event, index);
         }}
         delete={() => {
-          this.deleteBookstate(index);
+          props.delete(index);
         }}
       />
     );
