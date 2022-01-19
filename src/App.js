@@ -1,4 +1,4 @@
-import "./App.css";
+import "./stylesheets/Main.css";
 import MainComponent from "./components/MainComponent";
 // import MainPerson from "./components/MainPerson";
 

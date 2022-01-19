@@ -1,15 +1,17 @@
+.booklist{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
 .book-item {
   padding: 10px;
   margin: 10px auto;
   border-radius: 10px;
   border: 1px solid;
   width: 280px;
-}
-
-.booklist {
-  flex-wrap: wrap;
-  width: 100%;
-  display: flex;
 }
 
 .head {
