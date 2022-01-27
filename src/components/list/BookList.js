@@ -8,8 +8,8 @@ const BookList = (props) => {
         key={book.id}
         bookName={book.bookName}
         writter={book.writter}
-        changeInpt={(event) => {
-          props.changeInput(event, index);
+        selectBook={() => {
+          props.selectBook(book);
         }}
         delete={() => {
           props.delete(index);

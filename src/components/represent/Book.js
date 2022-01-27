@@ -3,7 +3,7 @@ import "../../stylesheets/Book.css";
 
 const Book = (props) => {
   return (
-    <div className="card mt-3">
+    <div onClick={props.selectBook} className="card mt-3">
       <div className="card-body">
         <h5 className="card-title">Book: {props.bookName}</h5>
         <p className="card-text">Writter: {props.writter}</p>

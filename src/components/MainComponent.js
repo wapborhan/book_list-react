@@ -9,6 +9,7 @@ class MainComponent extends Component {
   // state
   state = {
     books: book,
+    selectedBook: null,
   };
 
   deleteBookstate = (index) => {
@@ -19,10 +20,20 @@ class MainComponent extends Component {
     this.setState({ books: books });
   };
 
+  selectedBookHandler = (book) => {
+    this.setState({
+      selectedBook: book,
+    });
+  };
+
   render() {
     // const bookState = this.state.books;
     let books = (
-      <BookList books={this.state.books} delete={this.deleteBookstate} />
+      <BookList
+        books={this.state.books}
+        selectBook={this.selectedBookHandler}
+        delete={this.deleteBookstate}
+      />
     );
 
     return (
