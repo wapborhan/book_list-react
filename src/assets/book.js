@@ -3,7 +3,7 @@ const books = [
   { id: 2, bookName: "Poth", writter: "Rabby Biswas" },
   { id: 3, bookName: "Somoi", writter: "MahMud Hasan" },
   { id: 4, bookName: "Fera", writter: "Arif Azad" },
-  { id: 5, bookName: "hablur Progmaming", writter: "Jhankar Mahbub" },
+  { id: 5, bookName: "hablur ", writter: "Jhankar " },
 ];
 
 export default books;

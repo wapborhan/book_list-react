@@ -1,7 +1,9 @@
-import react, { Component } from "react";
+import React, { Component } from "react";
 import book from "../assets/book";
 import BookList from "./list/BookList";
 import NewBook from "./represent/NewBook";
+import Header from "./pages/Header";
+import { Route, Routes } from "react-router-dom";
 
 class MainComponent extends Component {
   // state
@@ -9,15 +11,7 @@ class MainComponent extends Component {
     books: book,
     showBooks: true,
   };
-  // changebookState = (newBook) => {
-  //   this.setState({
-  //     books: [
-  //       { bookName: newBook, writter: "Borhan Uddin" },
-  //       { bookName: "Amader somoi", writter: "Rabby Biswas" },
-  //       { bookName: "Polish", writter: "Farhabi Islam" },
-  //     ],
-  //   });
-  // };
+
   changeInput = (event, index) => {
     const book = {
       ...this.state.books[index],
@@ -57,32 +51,42 @@ class MainComponent extends Component {
 
     return (
       <div className="App">
-        <h1 className="head">Book List</h1>
-        <button onClick={this.toogleBooks}>Toogle Books</button>
-        {/* <button
-          onClick={this.changebookState.bind(this, "Sukher Paira Koire??")}
-        >
-          Change Book
-        </button> */}
-        <br />
-        <div className="booklist">
-          {books}
-
-          {/* <Book
+        <Header />
+        {/* <div className="booklist card-deck  ">
+          <Book
             bookName={this.state.books[0].bookName}
             writter={this.state.books[0].writter}
             changeInpt={this.changeInput}
           />
-          <Book
-            bookName={this.state.books[1].bookName}
-            writter={this.state.books[1].writter}
+        </div> */}
+
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <div className="container-flued">
+                <div className="row">
+                  <div className="col-lg-12">
+                    <h1 className="text-center bg-success pt-3 pb-3 text-light">
+                      Book List
+                    </h1>
+                  </div>
+                </div>
+                <div className="container">
+                  <button
+                    className="btn btn-warning text-light"
+                    onClick={this.toogleBooks}
+                  >
+                    Toogle Books
+                  </button>
+                  <div className="booklist card-deck mt-3">{books}</div>
+                </div>
+              </div>
+            }
           />
-          <Book
-            bookName={this.state.books[2].bookName}
-            writter={this.state.books[2].writter}
-            change={this.changebookState}
-          /> */}
-        </div>
+          <Route exact path="/new-book" element={<NewBook />} />
+        </Routes>
       </div>
     );
   }
