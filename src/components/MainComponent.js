@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import book from "../assets/book";
 import BookList from "./list/BookList";
+import BookDetails from "./represent/BookDetails";
 import NewBook from "./represent/NewBook";
 import Header from "./pages/Header";
 import { Route, Routes } from "react-router-dom";
@@ -20,7 +21,8 @@ class MainComponent extends Component {
     this.setState({ books: books });
   };
 
-  selectedBookHandler = (book) => {
+  selectedBookHandler = (bookId) => {
+    const book = this.state.books.filter((book) => book.id === bookId)[0];
     this.setState({
       selectedBook: book,
     });
@@ -67,6 +69,11 @@ class MainComponent extends Component {
             }
           />
           <Route exact path="/new-book" element={<NewBook />} />
+          <Route
+            exact
+            path="/book/:id"
+            element={<BookDetails book={this.state.selectedBook} />}
+          />
         </Routes>
       </div>
     );

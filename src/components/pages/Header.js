@@ -6,9 +6,9 @@ export default class Header extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <NavLink className="navbar-brand" to="/">
             Book List
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
