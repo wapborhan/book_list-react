@@ -9,12 +9,6 @@ const Book = (props) => {
         <p className="card-text">Writter: {props.writter}</p>
       </div>
       <div className="card-footer d-flex justify-content-between">
-        <input
-          className="w-75"
-          type="text"
-          onChange={props.changeInpt}
-          value={props.bookName}
-        />
         <button className="btn btn-danger rounded" onClick={props.delete}>
           X
         </button>

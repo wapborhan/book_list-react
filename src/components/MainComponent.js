@@ -9,19 +9,6 @@ class MainComponent extends Component {
   // state
   state = {
     books: book,
-    showBooks: true,
-  };
-
-  changeInput = (event, index) => {
-    const book = {
-      ...this.state.books[index],
-    };
-    book.bookName = event.target.value;
-
-    const books = [...this.state.books];
-    books[index] = book;
-
-    this.setState({ books: books });
   };
 
   deleteBookstate = (index) => {
@@ -32,22 +19,11 @@ class MainComponent extends Component {
     this.setState({ books: books });
   };
 
-  toogleBooks = () => {
-    this.setState({ showBooks: !this.state.showBooks });
-  };
-
   render() {
     // const bookState = this.state.books;
-    let books = null;
-    if (this.state.showBooks) {
-      books = (
-        <BookList
-          books={this.state.books}
-          delete={this.deleteBookstate}
-          changeInput={this.changeInput}
-        />
-      );
-    }
+    let books = (
+      <BookList books={this.state.books} delete={this.deleteBookstate} />
+    );
 
     return (
       <div className="App">
@@ -74,12 +50,6 @@ class MainComponent extends Component {
                   </div>
                 </div>
                 <div className="container">
-                  <button
-                    className="btn btn-warning text-light"
-                    onClick={this.toogleBooks}
-                  >
-                    Toogle Books
-                  </button>
                   <div className="booklist card-deck mt-3">{books}</div>
                 </div>
               </div>
