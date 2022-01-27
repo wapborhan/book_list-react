@@ -1,6 +1,7 @@
 import react, { Component } from "react";
 import book from "../assets/book";
 import BookList from "./list/BookList";
+import NewBook from "./represent/NewBook";
 
 class MainComponent extends Component {
   // state
