@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/book_list-react/static/css/main.7d00df06.css",
-    "main.js": "/book_list-react/static/js/main.b62bff63.js",
-    "static/js/787.4c83d49a.chunk.js": "/book_list-react/static/js/787.4c83d49a.chunk.js",
+    "main.css": "/book_list-react/static/css/main.d587b524.css",
+    "main.js": "/book_list-react/static/js/main.862ce7a5.js",
+    "static/js/787.af6f52f5.chunk.js": "/book_list-react/static/js/787.af6f52f5.chunk.js",
     "index.html": "/book_list-react/index.html",
-    "main.7d00df06.css.map": "/book_list-react/static/css/main.7d00df06.css.map",
-    "main.b62bff63.js.map": "/book_list-react/static/js/main.b62bff63.js.map",
-    "787.4c83d49a.chunk.js.map": "/book_list-react/static/js/787.4c83d49a.chunk.js.map"
+    "main.d587b524.css.map": "/book_list-react/static/css/main.d587b524.css.map",
+    "main.862ce7a5.js.map": "/book_list-react/static/js/main.862ce7a5.js.map",
+    "787.af6f52f5.chunk.js.map": "/book_list-react/static/js/787.af6f52f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d00df06.css",
-    "static/js/main.b62bff63.js"
+    "static/css/main.d587b524.css",
+    "static/js/main.862ce7a5.js"
   ]
 }
