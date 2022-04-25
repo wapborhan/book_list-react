@@ -4,7 +4,8 @@ import BookList from "./list/BookList";
 import BookDetails from "./represent/BookDetails";
 import NewBook from "./represent/NewBook";
 import Header from "./pages/Header";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Footer from "./pages/Footer";
 
 class MainComponent extends Component {
   // state
@@ -52,21 +53,22 @@ class MainComponent extends Component {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/book_list-react"
             element={
               <div className="container-flued">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <h1 className="text-center bg-success pt-3 pb-3 text-light">
-                      Book List
-                    </h1>
-                  </div>
-                </div>
+                <h1 className="text-center bg-success pt-3 pb-3 text-light">
+                  Book List
+                </h1>
+
                 <div className="container">
                   <div className="booklist card-deck mt-3">{books}</div>
                 </div>
               </div>
             }
+          />
+          <Route
+            path="/"
+            element={<Navigate replace to="/book_list-react" />}
           />
           <Route exact path="/new-book" element={<NewBook />} />
           <Route
@@ -75,6 +77,7 @@ class MainComponent extends Component {
             element={<BookDetails book={this.state.selectedBook} />}
           />
         </Routes>
+        <Footer />
       </div>
     );
   }
